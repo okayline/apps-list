@@ -70,7 +70,7 @@
   <ul class="apps">
     <li><a href="https://dungeon.88x31.app" target="_blank" rel="noopener">4Dungeon: a Daily Digital Demon Dungeon crawler</a><br>Async ASCII daily seeded dungeon crawler based on Moon phases (Late α)</li>
     <li><a href="https://scoundrel.88x31.app" target="_blank" rel="noopener">scoundrel.exe</a><br>daily, seeded ASCII Scoundrel (rougelike single player card game) (β)</li>
-      <li><a href="https://88x31.app" target="_blank" rel="noopener">~*~88x31 cLuB~*~</a><br>daily ledger collectible Gatcha pack opening (β)</li>
+      <li><a href="https://club.88x31.app" target="_blank" rel="noopener">~*~88x31 cLuB~*~</a><br>daily ledger collectible Gatcha pack opening (β)</li>
     <li><a href="https://dawn.88x31.app" target="_blank" rel="noopener">Dawn Baton</a><br>daily, async global passing game (β)</li>
     <li><a href="https://cft.88x31.app" target="_blank" rel="noopener">TILT.EXE</a><br>ASCII FPS (α)</li>
     <li><a href="https://beat.88x31.app" target="_blank" rel="noopener">Beat Fighter II: The New Challengers</a><br>Daily seeded Rhythm Tengoku Fighting game (Late α)</li>
@@ -192,7 +192,7 @@
     // keeping the Cloudflare button last.
     (async () => {
       try {
-        const res = await fetch("https://88x31.app/api/collection?user=kura");
+        const res = await fetch("https://club.88x31.app/api/collection?user=kura");
         if (!res.ok) return;
         const { banners = [] } = await res.json();
         if (!banners.length) return;
@@ -202,13 +202,13 @@
         const items = [];
         banners.forEach((b, n) => {
           const link = document.createElement("a");
-          link.href = "https://88x31.app/#banner/" + Number(b.id);
+          link.href = "https://club.88x31.app/#banner/" + Number(b.id);
           link.target = "_blank";
           link.rel = "noopener";
           link.title = String(b.name || "");
 
           const img = document.createElement("img");
-          img.src = "https://88x31.app/" + String(b.image_key).replace(/^\//, "");
+          img.src = "https://club.88x31.app/" + String(b.image_key).replace(/^\//, "");
           img.width = 88;
           img.height = 31;
           img.alt = link.title;
